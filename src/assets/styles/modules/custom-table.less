@@ -1,0 +1,118 @@
+@import "~@/assets/styles/color.less";
+
+.table-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 990px;
+  min-height: 100px;
+  overflow: hidden;
+  &.scroll {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+  }
+  table {
+    &.table-layout-fixed {
+      table-layout: fixed;
+    }
+    border-collapse: collapse;
+    width: 100%;
+    thead {
+      height: 42px;
+      line-height: 38px;
+      border-top: 2px solid @colorOrange;
+      border-bottom: 2px solid #fff;
+      background-color: #5B5B5B;
+      th {
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 100px;
+        color: @colorOrange;
+        font-weight: normal;
+        text-align: center;
+        white-space: nowrap;
+        border-right: 1px solid #fff;
+        &:last-child {
+          border-right: 1px solid #5B5B5B;
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:hover td > div {
+          background-color: #F3F3FF;
+        }
+        td {
+          height: 44px;
+          white-space: nowrap;
+          max-width: 300px;
+          > div {
+            height: 40px;
+            line-height: 38px;
+            padding-left: 8px;
+            padding-right: 8px;
+            text-align: center;
+            color: @colorLabel;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid @colorPink;
+            border-right: none;
+            background-color: #fff;
+          }
+          &:last-child > div {
+            border-right: 1px solid @colorPink;
+          }
+        }
+        &.statistics-tr {
+          &:hover {
+            background-color: none;
+          }
+          td {
+            max-width: 280px;
+            text-align: center;
+            font-size: 16px;
+            label {
+              color: #212121;
+            }
+            span.money {
+              color: #f76252;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 高亮处理 */
+.highlight {
+  td > div {
+    border-top: 1px solid #99CCCC !important;
+    border-bottom: 1px solid #99CCCC !important;
+  }
+  td:first-child {
+    & > div {
+      border-left: 1px solid #99CCCC !important;
+    }
+  }
+  td:last-child {
+    & > div {
+      border-right: 1px solid #99CCCC !important;
+    }
+  }
+}
+
+/* 低亮处理 */
+.lowlight {
+  background-color: #e8e8e8 !important;
+  td {
+    background-color: #e8e8e8 !important;
+    > div {
+      background-color: #e8e8e8 !important;
+      border-top: 1px solid transparent !important;
+      border-bottom: 1px solid transparent !important;
+    }
+  }
+}

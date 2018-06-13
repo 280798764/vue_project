@@ -1,0 +1,133 @@
+/* 自定义iview组件风格 */
+@import '~@/assets/styles/color.less';
+@import '~iview/src/styles/index.less';
+
+// iview colors
+@primary-color          : @colorOrange;
+@info-color             : #2db7f5;
+@success-color          : #00cc66;
+@warning-color          : #ff9900;
+@error-color            : #ff3300;
+@link-color             : #3399ff;
+@link-hover-color       : tint(@link-color, 20%);
+@link-active-color      : shade(@link-color, 5%);
+@selected-color         : fade(@primary-color, 90%);
+@input-placeholder-color: @colorLightGray;
+
+// iview base
+@border-radius-base     : 3px;
+// iview border color
+@border-color-base      : @colorInputBorder;  // outside
+
+/* 样式改造 */
+/* Input样式 */
+.ivu-input-wrapper .ivu-input {
+  height: 25px;
+  box-shadow: none;
+  border-radius: 3px;
+  border: 1px solid #C9C9C9;
+}
+/* Radio 样式 */
+.ivu-radio-wrapper {
+  .ivu-radio {
+    top: -1px;
+  }
+}
+/* Date-picker 样式 */
+.ivu-date-picker {
+  .ivu-icon {
+    top: -3px;
+  }
+}
+/* Select 样式 */
+.ivu-select-single {
+  .ivu-select-selection {
+    height: 25px;
+    border: 1px solid #C9C9C9;
+    .ivu-select-input {
+      height: 25px;
+      line-height: 25px;
+    }
+  }
+}
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+  height: 25px;
+  line-height: 25px;
+}
+/* Dropdown 样式 */
+.ivu-select-dropdown {
+  min-width: 120px;
+}
+.ivu-select-dropdown {
+  position: absolute !important;
+}
+/* Confirm样式 */
+.ivu-modal {
+  top: 250px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #333;
+  .ivu-modal-content {
+    .ivu-modal-body {
+      padding: 0;
+      line-height: 1;
+      .ivu-modal-confirm {
+        padding: 0;
+        .ivu-modal-confirm-head {
+          position: relative;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          border-bottom: 2px solid @colorOrange;
+          background-color: @colorBlack;
+          .ivu-modal-confirm-head-title {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #fff;
+          }
+        }
+        .ivu-modal-confirm-body {
+          position: relative;
+          line-height: 60px;
+          padding: 20px;
+          font-size: 14px;
+          text-align: center;
+          overflow: hidden;
+          h3, p {
+            line-height: 30px;
+          }
+          .ivu-modal-confirm-body-icon {
+            display: none;
+          }
+        }
+        .ivu-modal-confirm-footer {
+          display: flex;
+          justify-content: center;
+          margin-top: 0;
+          border-top: 2px solid #F1F1F1;
+          padding: 15px 0;
+          text-align: center;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          .ivu-btn {
+            padding: 3px 0;
+            font-size: 12px;
+            letter-spacing: 2px;
+            .btn-base;
+          }
+          .ivu-btn-text {
+            margin-right: 20px;
+            background-color: @colorBgDark;
+            &:hover {
+              background-color: lighten(@colorBgDark, 5%);
+            }
+            &:active {
+              background-color: darken(@colorBgDark, 5%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

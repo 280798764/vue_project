@@ -1,0 +1,106 @@
+/* 表单控件基础样式 */
+.label-base(@width: 100px) {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  width: @width;
+  height: 25px;
+  white-space: nowrap;
+  font-size: 12px;
+  justify-content: flex-end;
+  color: @colorLabel;
+}
+
+.input-base(@width: 120px) {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  width: @width;
+  height: 25px;
+  font-size: 12px;
+  color: @colorBlack;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid @colorInputBorder;
+  &[readonly] {
+    color: @colorReadOnly;
+    background: @colorBgReadOnly;
+  }
+}
+
+.select-base(@width: 120px) {
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  width: @width;
+  height: 25px;
+  font-size: 12px;
+  color: #333;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid @colorInputBorder;
+}
+
+.textarea-base(@width: 836px, @height: 100px) {
+  display: flex;
+  width: @width;
+  height: @height;
+  line-height: 18px;
+  padding: .3em 6px;
+  margin-right: .7em;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid @colorTextareaBorder;
+  font-size: 12px;
+  color: #333;
+  outline: none;
+  overflow: auto;
+  resize: none;
+  &[disabled] {
+    border: 1px solid #F8F8F8;
+  }
+}
+
+// 按钮样式基础
+.btn-base (@width: 75px, @height: 30px, @size: 12px, @color: #fff, @bgcolor: @colorOrange) {
+  display: flex;
+  min-width: @width;
+  height: @height;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  color: @color;
+  font-size: @size;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 2px;
+  background-color: @bgcolor;
+  &:hover {
+    background-color: lighten(@bgcolor, 5%);
+  }
+  &:active {
+    background-color: darken(@bgcolor, 5%);
+  }
+}
+
+/* input placeholder字体颜色设置 */
+input::-webkit-input-placeholder {
+  color: @colorLightGray;
+}
+input:-moz-placeholder {
+  color: @colorLightGray;
+}
+input:-ms-input-placeholder {
+  color: @colorLightGray;
+}
+textarea::-webkit-input-placeholder {
+  color: @colorLightGray;
+}
+textarea:-moz-placeholder {
+  color: @colorLightGray;
+}
+textarea:-ms-input-placeholder {
+  color: @colorLightGray;
+}

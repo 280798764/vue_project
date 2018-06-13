@@ -1,0 +1,78 @@
+@import "~@/assets/styles/color.less";
+
+.pagination-wrapper {
+  height: 80px;
+  line-height: 24px;
+  padding: 28px 14px;
+  color: #000;
+  user-select: none;
+  background-color: #fff;
+  .left {
+    float: left;
+    input {
+      margin: 0 12px;
+      width: 50px;
+      height: 24px;
+      color: #B2B2B2;
+      text-align: center;
+      outline: none;
+      border: 1px solid #C9C9C9;
+      border-radius: 20px;
+    }
+  }
+  .right {
+    float: right;
+    .page-info {
+      display: inline-flex;
+      .pages-wrapper {
+        height: 24px;
+        border-radius: 20px;
+        background-color: #F1F1F1;
+        ul {
+          display: inline-flex;
+          li {
+            display: inline-flex;
+            min-width: 24px;
+            height: 24px;
+            justify-content: center;
+            align-items: center;
+            cursor: default;
+            border-radius: 20px;
+            &.clickable {
+              cursor: pointer;
+            }
+            &.active {
+              color: #fff;
+              background-color: @colorOrange;
+            }
+            &.ellipsis {
+              position: relative;
+              top: -3px;
+            }
+          }
+        }
+      }
+      .first-page, .last-page, .prev-page, .next-page {
+        cursor: pointer;
+        &.disabled {
+          color: #C9C9C9;
+          cursor: not-allowed;
+        }
+      }
+      .prev-page, .next-page {
+        display: inline-flex;
+        margin: 0 20px;
+        width: 12px;
+        height: 12px;
+        font-size: 12px;
+      }
+    }
+    .total-pages {
+      display: inline-flex;
+      margin-left: 42px;
+      .count {
+        margin: 0 11px;
+      }
+    }
+  }
+}

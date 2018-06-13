@@ -1,0 +1,65 @@
+/* 自定义radio样式 */
+.radio-wrapper {
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent !important;
+  .cumtom-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 14px;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+    .cumtom-radio-inner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #999;
+      border-radius: 50%;
+      &:after {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        left: 2px;
+        top: 2px;
+        border-radius: 6px;
+        display: table;
+        border-top: 0;
+        border-left: 0;
+        content: ' ';
+        background-color: #FABF40;
+        opacity: 0;
+      }
+    }
+  }
+}
+.cumtom-radio-checked {
+  .cumtom-radio {
+    .cumtom-radio-inner {
+      border-color: #FABF40;
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+  .flag {
+    background-color: #FABF40;
+  }
+}
+.disabled {
+  .cumtom-radio {
+    cursor: default;
+    .cumtom-radio-inner {
+      border-color: #ccc;
+      &:after {
+        background-color: #ccc;
+        opacity: 1;
+      }
+    }
+  }
+}
